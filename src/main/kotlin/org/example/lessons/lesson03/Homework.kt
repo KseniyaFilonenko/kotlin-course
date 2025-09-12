@@ -1,4 +1,4 @@
-package lessons.lesson03
+package org.example.lessons.lesson03
 
 class Homework {
 
@@ -9,17 +9,17 @@ class Homework {
     //3. Место проведения
     var place: String = "Minsk, address1"
     //4. Подробный бюджет мероприятия, включая расходы на оборудование, кейтеринг и другие операционные расходы.
-    private lateinit var detailedBudget: String
+    private val detailedBudget: String = ""
     //5. Количество участников
-    var qtyOfMembers: Int = 32
+    var qtyOfMembers: Int = 0
     //6. Длительность хакатона
-    var eventLength: Int = 180
-    //7. Контактная информация и условия соглашений с поставщиками пищи, оборудования и других услуг.?????????????
+    val eventLength: Int = 2
+    //7. Контактная информация и условия соглашений с поставщиками пищи, оборудования и других услуг.
     private val contactInfoAndDeal: String = "Contact info and Document with all main points"
     //8. Текущее состояние хакатона (статус)
     var eventStatus: String = "Not started"
     //9. Список спонсоров
-    private val sponsorsList: String = "List of sponsors"
+    val sponsorsList: String = "List of sponsors"
     //10. Бюджет мероприятия
     private val generalBudget: Int = 100
     //11. Текущий уровень доступа к интернету
@@ -27,23 +27,23 @@ class Homework {
     //12. Информация о транспортировке оборудования, распределении ресурсов и координации между различными командами поддержки.
     private val logisticInfo: String = "logistic info"
     //13. Количество команд
-    var qtyOfTeams: Int = 2
+    var qtyOfTeams: Int = 0
     //14. Перечень задач
     val tasksList: String = "tasks list"
     //15. План эвакуации
-    val evacuationPlan: String = "evacuation plan"
+    var evacuationPlan: String = "evacuation plan"
     //16. Список доступного оборудования (всё, что выделено для использования на мероприятии)
     val equipmentList: String = "equipment list"
     //17. Список свободного оборудования (всё, что можно взять прямо сейчас и что не занято другими участниками)
     var freeEquipmentList: String = "free equipment list"
     //18. График питания участников (зависит от поставщика питания, определяемого за неделю до начала)
-    var eatingPlan: String = "eating plan"
+    lateinit var eatingPlan: String
     //19. План мероприятий на случай сбоев
     val emergencyPlan: String = "emergency plan"
     //20. Список экспертов и жюри
     var expertsList: String = "experts list"
     //21. Политика конфиденциальности
-    private val privacyPolicy: String = "privace policy"
+    val privacyPolicy: String = "privace policy"
     //22. Приватные отзывы (фидбэк) участников и зрителей для анализа проблем.
     private lateinit var feedback: String
     //23. Текущая температура в помещении
@@ -76,14 +76,11 @@ class Homework {
     var isSpecialEquipmentAvailable: Boolean = false
     //37. Список партнеров мероприятия
     var partners: String = "partners"
+        private set
     //38. Отчет, включающий фотографии, видео и отзывы, генерируется и становится доступен после завершения мероприятия.
-    private var report: String? = null
-
-    var reportFinal: String
-        get() = report ?: "Отчёт пока недоступен"
-        set(value) {
-            report = value
-        }
+    val report: String by lazy {
+        ""
+    }
     //39. Внутренние правила распределения призов
     var prizeRules: String = "prize rules"
     //40. Список разыгрываемых призов
@@ -93,26 +90,12 @@ class Homework {
     //42. Особые условия для участников с ограниченными возможностями
     val specialConditions: String = "special conditions"
     //43. Общее настроение участников (определяется опросами)
-    var participantsMood: String? = null
-    var participantsMoodFinal: String
-        get() = participantsMood ?: "настроение неизвестно"
-        set(value) {
-            participantsMood = value
-        }
+    var participantsMood: String = ""
     //44. Подробный план хакатона, включающий время и содержание каждого сегмента, инициализируется непосредственно перед началом мероприятия,
     // так как зависит от фактического состава команд и взятых в работу задач.
-    var hackathonPlan: String? = null
-    var hackathonPlanFinal: String
-        get() = hackathonPlan ?: "план пока недоступен"
-        set(value) {
-            hackathonPlan = value
-        }
+    lateinit var hachatonPlan: String
     //45. Имя знаменитого специального гостя, которое будет объявлено за день до мероприятия, но в момент инициализации неизвестно.
-    var specialGuest: String? = null
-        get() = field
-        set(value) {
-            field = value
-        }
+    lateinit var specialGuest: String
     //46. Максимальное количество людей, которое может вместить место проведения.
     val maxMembersQty: Int = 150
     //47. Количество часов, отведенное каждой команде для работы над проектом.
