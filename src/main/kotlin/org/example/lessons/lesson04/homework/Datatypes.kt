@@ -1,4 +1,4 @@
-package org.example.lessons.lesson04.Homework
+package org.example.lessons.lesson04.homework
 
 class Datatypes {
     val v1: Int = 42
