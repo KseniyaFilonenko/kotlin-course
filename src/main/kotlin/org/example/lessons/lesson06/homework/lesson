@@ -1,0 +1,26 @@
+val symbol = 5
+    if (symbol > 10) {
+        println("> 10")
+    }
+    val intRange = 1..10
+    val intRangeUntil = 1 until 10
+    val down = 10 downTo 1
+    val charRange = 'a'..'w'
+
+    val inRange = 2 in intRange
+    val notInRange = 2 !in intRange
+
+    val score = 95
+    when {
+        score in 90..100 -> println("perfect")
+        score in 80..90 -> println("good")
+        score in 70..90 -> println("ok")
+        else -> println("error")
+    }
+    val scoreNew = 95
+    when (scoreNew) {
+        in 90..100 -> println("perfect")
+        in 80..89 -> println("good")
+        in 70..79 -> println("ok")
+        else -> println("error")
+    }
