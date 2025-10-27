@@ -1,4 +1,4 @@
-package org.example.lessons.lesson15.homeworks
+package org.example.lessons.lesson15.homeworks.education
 
 class University(
     name: String,
