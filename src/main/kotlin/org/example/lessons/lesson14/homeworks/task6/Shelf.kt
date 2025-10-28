@@ -55,7 +55,7 @@ class Shelf (val capacity: Int, val items: MutableList<String>) {
         return nameOfItem in items
     }
 
-    fun getItems (): List<String> {
+    fun getItems1 (): List<String> {
         return items.toList()
     }
 }
