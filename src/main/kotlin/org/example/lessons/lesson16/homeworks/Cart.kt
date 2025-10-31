@@ -32,4 +32,36 @@ class Cart {
             items[id] = (items[id] ?: 0) + 1
         }
     }
+
+    override fun toString(): String {
+        if (items.isEmpty()) {
+            return "Корзина пуста"
+        }
+
+        var result = "Содержимое корзины:\n"
+        result += "ID товара | Количество\n"
+
+        for ((id, qty) in items) {
+            result += "$id | $qty\n"
+        }
+
+        val totalArticles = items.size
+        val totalQuantity = items.values.sum()
+
+        result += "Всего артикулов: $totalArticles\n"
+        result += "Всего товаров: $totalQuantity"
+
+        return result
+    }
+}
+
+fun main() {
+    val cart = Cart()
+    cart.addToCart(101)
+    cart.addToCart(102, 3)
+    cart.addToCart(mapOf(103 to 2, 104 to 5))
+    cart.addToCart(listOf(101, 102, 103))
+
+    println(cart.toString())
+    println(cart)
 }
