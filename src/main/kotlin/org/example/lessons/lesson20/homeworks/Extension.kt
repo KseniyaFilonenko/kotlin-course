@@ -43,6 +43,16 @@ fun main() {
 
     println(5f.within(5.1f, 0.2f))
     println(5f.within(5.1f, 0.05f))
+
+    val original = "Hello, Kotlin!"
+    val base = 3
+
+    val encrypted = original.encrypt(base)
+    val decrypted = encrypted.decrypt(base)
+
+    println("Original:  $original")
+    println("Encrypted: $encrypted")
+    println("Decrypted: $decrypted")
 }
 
 // 5
@@ -51,4 +61,17 @@ fun String.encrypt(base: Int): String {
 }
 fun String.decrypt(base: Int): String {
     return map { it - base }.joinToString("")
+}
+
+// 6
+fun String.twitterize(authors: List<String>) {
+    var counter = 0
+    for (l in this) {
+        println(authors[counter++])
+        println(l.uppercase())
+        println()
+        if (counter >= authors.size) {
+            counter = 0
+        }
+    }
 }
