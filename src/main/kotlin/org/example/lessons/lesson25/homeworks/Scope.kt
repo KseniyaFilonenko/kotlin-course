@@ -15,6 +15,17 @@ fun logPersonInfo(person: Person) {
     }
 }
 
+// 6
+fun Person?.toEmployee(position: String): Employee? {
+    return this?.let { person ->
+        Employee(
+            name = person.name,
+            age = person.age,
+            position = position
+        )
+    }
+}
+
 fun main() {
     // 2
     val person = Person("Alice", 28).apply {
@@ -34,5 +45,29 @@ fun main() {
     val person2 = Person("Alice", 28).also {
         it.email = "alice@example.com"
         logPersonInfo(it)
+    }
+
+    // 4
+    val person3 = Person("Alice", 30).apply {
+        email = "alice@mail.com"
+    }
+
+    val employee2 = with(person) {
+        Employee(name, age, "Developer").apply {
+            email = this@with.email
+            department = "IT"
+        }
+    }
+
+    // 5
+    val person4 = Person("Alice", 30).apply {
+        email = "alice@mail.com"
+    }
+
+    val employee3 = person.run {
+        Employee(name, age, "Developer").apply {
+            email = this@run.email
+            department = "IT"
+        }
     }
 }
