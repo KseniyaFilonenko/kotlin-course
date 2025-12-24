@@ -1,0 +1,67 @@
+{
+  "name": "Irene",
+  "isEmployed": true,
+  "birthDate": "1980-12-01",
+  "position": "CTO",
+  "subordinates": [
+    {
+      "name": "Grace",
+      "isEmployed": true,
+      "birthDate": "1986-07-18",
+      "position": "PM",
+      "subordinates": [
+        {
+          "name": "Eve",
+          "isEmployed": true,
+          "birthDate": "1987-03-10",
+          "position": "TEAM_LEAD",
+          "subordinates": [
+            {
+              "name": "Alice",
+              "isEmployed": true,
+              "birthDate": "1995-04-12",
+              "position": "FRONTEND_DEV",
+              "subordinates": []
+            },
+            {
+              "name": "Bob",
+              "isEmployed": true,
+              "birthDate": "1993-09-30",
+              "position": "FRONTEND_DEV",
+              "subordinates": []
+            }
+          ]
+        },
+        {
+          "name": "Frank",
+          "isEmployed": true,
+          "birthDate": "1985-11-05",
+          "position": "TEAM_LEAD",
+          "subordinates": [
+            {
+              "name": "Charlie",
+              "isEmployed": true,
+              "birthDate": "1990-01-15",
+              "position": "BACKEND_DEV",
+              "subordinates": []
+            },
+            {
+              "name": "Diana",
+              "isEmployed": true,
+              "birthDate": "1988-06-22",
+              "position": "BACKEND_DEV",
+              "subordinates": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Henry",
+      "isEmployed": true,
+      "birthDate": "1992-02-27",
+      "position": "CRM",
+      "subordinates": []
+    }
+  ]
+}
